@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/widgets/post.dart';
 import 'package:twitter_clone/widgets/story.dart';
 
 class HomePage extends StatefulWidget {
@@ -46,78 +47,50 @@ class _HomePageState extends State<HomePage> {
 
           SizedBox(height: 10,),
 
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey)
-            ),
-            padding: EdgeInsets.all(8),
-            child: Row(
-              children: [
-                CircleAvatar(
-                  radius: 32,
-                  backgroundColor: Colors.black,
-                  child: CircleAvatar(
-                    radius: 30,
-                    backgroundImage:AssetImage("assets/twitter.png"),
-                    backgroundColor: Colors.white,
-                    
-                  ),
-                ),
+          Post(
+            image: AssetImage("assets/twitter.png"),
+            name: "Aswin Gopinathan",
+            handle: "AG1871",
+            postText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an "
+            "unknown printer took a galley of type and scrambled it to make a type specimen book. It "
+            "has survived not only five centuries",
+            time: 4,
+            comments: 3,
+            retweets: 5,
+            likes: 100,
+          ),
 
-                SizedBox(width: 5,),
+          Post(
+            image: AssetImage("assets/insta.png"),
+            name: "Ash",
+            handle: "ash1181",
+            postText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an "
+            "unknown printer took a galley of type and scrambled it to make a type specimen book. It "
+            "has survived not only five centuries",
+            time: 6,
+            comments: 10,
+            retweets: 5,
+            likes: 10,
+          ),
 
-                Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          "Aswin Gopinathan",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                          ),
-                        ),
-
-                        SizedBox(width: 2,),
-
-                        Text(
-                          "@Ag1871",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Colors.grey
-                          ),
-                        ),
-
-                        SizedBox(width: 2,),
-
-                        Text(
-                          "2h",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.grey
-                          ),
-                        ),
-
-
-                        IconButton(
-                          icon: Icon(Icons.keyboard_arrow_down),
-                          onPressed: () {
-
-                          },
-                        )
-
-                      ],
-                    )
-                  ],
-                )
-              ],
-            ),
+          Post(
+            image: AssetImage("assets/fb.png"),
+            name: "Excleisor",
+            handle: "stam",
+            postText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an "
+            "unknown printer took a galley of type and scrambled it to make a type specimen book. It "
+            "has survived not only five centuries",
+            time: 7,
+            comments: 100,
+            retweets: 500,
+            likes: 1000,
           )
         ],
       )
     );
   }
 }
+
