@@ -10,6 +10,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  int selectedItem = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,8 +92,58 @@ class _HomePageState extends State<HomePage> {
             likes: 1000,
           )
         ],
+      ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Stack(
+              children: <Widget>[
+                new Icon(Icons.home,size: 30),
+                new Positioned(  // draw a red marble
+                  top: 0.0,
+                  right: 0.0,
+                  child: new Icon(Icons.brightness_1, size: 8.0, 
+                    color: Colors.blue),
+                )
+              ]
+            ),
+            title: Text("")
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search,size: 30),
+              title: Text(
+                ""
+              )
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.notifications_none,size: 30),
+              title: Text(
+                  ""
+              )
+          ),
+
+          BottomNavigationBarItem(
+              icon: Icon(Icons.mail,size: 30),
+              title: Text(
+                  ""
+              )
+          )
+        ],
+        currentIndex: selectedItem,
+        onTap: changeIcon,
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.grey,
       )
     );
+  }
+
+  void changeIcon(int index) {
+    setState(() {
+      selectedItem = index;
+    });
   }
 }
 
